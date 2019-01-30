@@ -10,9 +10,12 @@ var app = express();
 
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://nabin:teamlion128@ds143683.mlab.com:43683/department-evaluation-db', { promiseLibrary: require('bluebird') })
+mongoose.connect('mongodb+srv://nabin:<PASSWORD>@cluster0-z4ilx.mongodb.net/test?retryWrites=true', { promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
+
+///mongodb+srv://nabin:<PASSWORD>@cluster0-z4ilx.mongodb.net/test?retryWrites=true
+///mongodb://nabin:teamlion128@ds143683.mlab.com:43683/department-evaluation-db
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
